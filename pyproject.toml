@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "gopro-streams"
+version = "0.1.0"
+description = ""
+authors = ["Teemu Rytkonen <teemur@xiaomi.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+pyqt6 = "^6.6.1"
+opencv-python = "^4.9.0.80"
+open_gopro = { git = "https://github.com/gopro/OpenGoPro.git", subdirectory = "demos/python/sdk_wireless_camera_control" }
+
+[build-system]
+requires = [
+    "poetry-core",
+]
+build-backend = "poetry.core.masonry.api"
