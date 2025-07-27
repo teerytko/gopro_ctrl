@@ -57,7 +57,7 @@ def gopro_is_streaming():
 
 async def main() -> None:
     # Put our code here
-    gopro = WirelessGoPro()
+    gopro = WirelessGoPro(target="GoPro 7773")
     if not gopro_is_connected(gopro):
         await gopro.open()
         print("Yay! I'm connected via BLE, Wifi, opened, and ready to send / get data now!")
@@ -68,6 +68,9 @@ async def main() -> None:
     if not cap.isOpened():
         print('VideoCapture not opened')
         exit(-1)
+    h = int(cap.get(cv2.CAP_PROP_FOURCC))
+    codec = chr(h&0xff) + chr((h>>8)&0xff) + chr((h>>16)&0xff) + chr((h>>24)&0xff)
+    print('Codec:', codec)
 
     while True:
         ret, frame = cap.read()

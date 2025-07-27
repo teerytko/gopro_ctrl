@@ -2,7 +2,7 @@
 name = "gopro-streams"
 version = "0.1.0"
 description = ""
-authors = ["Teemu Rytkonen <teemur@xiaomi.com>"]
+authors = ["Teemu Rytkonen <teemu.rytkonen@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
